@@ -1,0 +1,752 @@
+
+C:\Users\hjjac\AppData\Local\Temp\arduino_build_658303/ROM_Switcher.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+   0:	10 c0       	rjmp	.+32     	; 0x22 <__ctors_end>
+   2:	2a c0       	rjmp	.+84     	; 0x58 <__bad_interrupt>
+   4:	29 c0       	rjmp	.+82     	; 0x58 <__bad_interrupt>
+   6:	28 c0       	rjmp	.+80     	; 0x58 <__bad_interrupt>
+   8:	27 c0       	rjmp	.+78     	; 0x58 <__bad_interrupt>
+   a:	26 c0       	rjmp	.+76     	; 0x58 <__bad_interrupt>
+   c:	25 c0       	rjmp	.+74     	; 0x58 <__bad_interrupt>
+   e:	24 c0       	rjmp	.+72     	; 0x58 <__bad_interrupt>
+  10:	23 c0       	rjmp	.+70     	; 0x58 <__bad_interrupt>
+  12:	22 c0       	rjmp	.+68     	; 0x58 <__bad_interrupt>
+  14:	21 c0       	rjmp	.+66     	; 0x58 <__bad_interrupt>
+  16:	e2 c0       	rjmp	.+452    	; 0x1dc <__vector_11>
+  18:	1f c0       	rjmp	.+62     	; 0x58 <__bad_interrupt>
+  1a:	1e c0       	rjmp	.+60     	; 0x58 <__bad_interrupt>
+  1c:	1d c0       	rjmp	.+58     	; 0x58 <__bad_interrupt>
+  1e:	1c c0       	rjmp	.+56     	; 0x58 <__bad_interrupt>
+  20:	1b c0       	rjmp	.+54     	; 0x58 <__bad_interrupt>
+
+00000022 <__ctors_end>:
+__trampolines_start():
+  22:	11 24       	eor	r1, r1
+  24:	1f be       	out	0x3f, r1	; 63
+  26:	cf e5       	ldi	r28, 0x5F	; 95
+  28:	d1 e0       	ldi	r29, 0x01	; 1
+  2a:	de bf       	out	0x3e, r29	; 62
+  2c:	cd bf       	out	0x3d, r28	; 61
+
+0000002e <__do_copy_data>:
+__do_copy_data():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2409
+  2e:	10 e0       	ldi	r17, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2410
+  30:	a0 e6       	ldi	r26, 0x60	; 96
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
+  32:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
+  34:	ec e7       	ldi	r30, 0x7C	; 124
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
+  36:	f3 e0       	ldi	r31, 0x03	; 3
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
+  38:	02 c0       	rjmp	.+4      	; 0x3e <__SP_H__>
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2417
+  3a:	05 90       	lpm	r0, Z+
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2422
+  3c:	0d 92       	st	X+, r0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2424
+  3e:	a4 37       	cpi	r26, 0x74	; 116
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2425
+  40:	b1 07       	cpc	r27, r17
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2426
+  42:	d9 f7       	brne	.-10     	; 0x3a <__do_copy_data+0xc>
+
+00000044 <__do_clear_bss>:
+__do_clear_bss():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  44:	20 e0       	ldi	r18, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  46:	a4 e7       	ldi	r26, 0x74	; 116
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  48:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  4a:	01 c0       	rjmp	.+2      	; 0x4e <.do_clear_bss_start>
+
+0000004c <.do_clear_bss_loop>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  4c:	1d 92       	st	X+, r1
+
+0000004e <.do_clear_bss_start>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  4e:	a8 38       	cpi	r26, 0x88	; 136
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  50:	b2 07       	cpc	r27, r18
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  52:	e1 f7       	brne	.-8      	; 0x4c <.do_clear_bss_loop>
+.do_clear_bss_start():
+  54:	77 d1       	rcall	.+750    	; 0x344 <main>
+  56:	90 c1       	rjmp	.+800    	; 0x378 <_exit>
+
+00000058 <__bad_interrupt>:
+__vector_1():
+  58:	d3 cf       	rjmp	.-90     	; 0x0 <__vectors>
+
+0000005a <setDisplay(unsigned char) [clone .part.3]>:
+_Z10setDisplayh():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:72
+  }
+  return lastButtonState;
+}
+
+void setDisplay(byte id) {
+  if (id < 20) PORTA = (PORTA & 0x80) | display[id];
+  5a:	9b b3       	in	r25, 0x1b	; 27
+  5c:	90 78       	andi	r25, 0x80	; 128
+  5e:	e8 2f       	mov	r30, r24
+  60:	f0 e0       	ldi	r31, 0x00	; 0
+  62:	e0 5a       	subi	r30, 0xA0	; 160
+  64:	ff 4f       	sbci	r31, 0xFF	; 255
+  66:	80 81       	ld	r24, Z
+  68:	89 2b       	or	r24, r25
+  6a:	8b bb       	out	0x1b, r24	; 27
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:73
+}
+  6c:	08 95       	ret
+
+0000006e <getButton()>:
+_Z9getButtonv():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:45
+byte idx;
+long buttonTime;
+long lastAction;
+byte lastButtonState = 0;
+
+byte getButton() {
+  6e:	0f 93       	push	r16
+  70:	1f 93       	push	r17
+  72:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:46
+  if ((PINB & (1 << 3)) == 0) { // Taste gedrückt
+  76:	b3 99       	sbic	0x16, 3	; 22
+  78:	27 c0       	rjmp	.+78     	; 0xc8 <getButton()+0x5a>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:47
+    if (lastButtonState == 0) { // vorher nicht gedrückt
+  7a:	81 11       	cpse	r24, r1
+  7c:	0f c0       	rjmp	.+30     	; 0x9c <getButton()+0x2e>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:48
+      lastButtonState = 1;
+  7e:	81 e0       	ldi	r24, 0x01	; 1
+  80:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:49
+      lastAction = millis();
+  84:	f5 d0       	rcall	.+490    	; 0x270 <millis>
+  86:	60 93 75 00 	sts	0x0075, r22	; 0x800075 <lastAction>
+  8a:	70 93 76 00 	sts	0x0076, r23	; 0x800076 <lastAction+0x1>
+  8e:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <lastAction+0x2>
+  92:	90 93 78 00 	sts	0x0078, r25	; 0x800078 <lastAction+0x3>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:68
+      } else {
+        return 1;
+      }
+    }
+  }
+  return lastButtonState;
+  96:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__data_end>
+  9a:	42 c0       	rjmp	.+132    	; 0x120 <getButton()+0xb2>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:51
+  if ((PINB & (1 << 3)) == 0) { // Taste gedrückt
+    if (lastButtonState == 0) { // vorher nicht gedrückt
+      lastButtonState = 1;
+      lastAction = millis();
+    } else { // Taste ist immernoch gedrückt
+      if ((millis() - lastAction) > 5000) lastButtonState = 5;
+  9c:	e9 d0       	rcall	.+466    	; 0x270 <millis>
+  9e:	00 91 75 00 	lds	r16, 0x0075	; 0x800075 <lastAction>
+  a2:	10 91 76 00 	lds	r17, 0x0076	; 0x800076 <lastAction+0x1>
+  a6:	20 91 77 00 	lds	r18, 0x0077	; 0x800077 <lastAction+0x2>
+  aa:	30 91 78 00 	lds	r19, 0x0078	; 0x800078 <lastAction+0x3>
+  ae:	60 1b       	sub	r22, r16
+  b0:	71 0b       	sbc	r23, r17
+  b2:	82 0b       	sbc	r24, r18
+  b4:	93 0b       	sbc	r25, r19
+  b6:	69 38       	cpi	r22, 0x89	; 137
+  b8:	73 41       	sbci	r23, 0x13	; 19
+  ba:	81 05       	cpc	r24, r1
+  bc:	91 05       	cpc	r25, r1
+  be:	58 f3       	brcs	.-42     	; 0x96 <getButton()+0x28>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:51 (discriminator 1)
+  c0:	85 e0       	ldi	r24, 0x05	; 5
+  c2:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__data_end>
+  c6:	e7 cf       	rjmp	.-50     	; 0x96 <getButton()+0x28>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:54
+    }
+  } else {                     // Taste losgelassen
+    if (lastButtonState > 0) { // Taste war gedrückt
+  c8:	88 23       	and	r24, r24
+  ca:	29 f3       	breq	.-54     	; 0x96 <getButton()+0x28>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:55
+      lastButtonState = 0;
+  cc:	10 92 74 00 	sts	0x0074, r1	; 0x800074 <__data_end>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:56
+      buttonTime = millis() - lastAction;
+  d0:	cf d0       	rcall	.+414    	; 0x270 <millis>
+  d2:	00 91 75 00 	lds	r16, 0x0075	; 0x800075 <lastAction>
+  d6:	10 91 76 00 	lds	r17, 0x0076	; 0x800076 <lastAction+0x1>
+  da:	20 91 77 00 	lds	r18, 0x0077	; 0x800077 <lastAction+0x2>
+  de:	30 91 78 00 	lds	r19, 0x0078	; 0x800078 <lastAction+0x3>
+  e2:	dc 01       	movw	r26, r24
+  e4:	cb 01       	movw	r24, r22
+  e6:	80 1b       	sub	r24, r16
+  e8:	91 0b       	sbc	r25, r17
+  ea:	a2 0b       	sbc	r26, r18
+  ec:	b3 0b       	sbc	r27, r19
+  ee:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <buttonTime>
+  f2:	90 93 7a 00 	sts	0x007A, r25	; 0x80007a <buttonTime+0x1>
+  f6:	a0 93 7b 00 	sts	0x007B, r26	; 0x80007b <buttonTime+0x2>
+  fa:	b0 93 7c 00 	sts	0x007C, r27	; 0x80007c <buttonTime+0x3>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:57
+      if (buttonTime > 5000) {
+  fe:	89 38       	cpi	r24, 0x89	; 137
+ 100:	23 e1       	ldi	r18, 0x13	; 19
+ 102:	92 07       	cpc	r25, r18
+ 104:	a1 05       	cpc	r26, r1
+ 106:	b1 05       	cpc	r27, r1
+ 108:	74 f4       	brge	.+28     	; 0x126 <getButton()+0xb8>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:59
+        return 4;
+      } else if (buttonTime > 2000) {
+ 10a:	81 3d       	cpi	r24, 0xD1	; 209
+ 10c:	27 e0       	ldi	r18, 0x07	; 7
+ 10e:	92 07       	cpc	r25, r18
+ 110:	a1 05       	cpc	r26, r1
+ 112:	b1 05       	cpc	r27, r1
+ 114:	54 f4       	brge	.+20     	; 0x12a <getButton()+0xbc>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:61
+        return 3;
+      } else if (buttonTime > 50) {
+ 116:	c3 97       	sbiw	r24, 0x33	; 51
+ 118:	a1 05       	cpc	r26, r1
+ 11a:	b1 05       	cpc	r27, r1
+ 11c:	44 f0       	brlt	.+16     	; 0x12e <getButton()+0xc0>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:62
+        return 2;
+ 11e:	82 e0       	ldi	r24, 0x02	; 2
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:69
+        return 1;
+      }
+    }
+  }
+  return lastButtonState;
+}
+ 120:	1f 91       	pop	r17
+ 122:	0f 91       	pop	r16
+ 124:	08 95       	ret
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:58
+  } else {                     // Taste losgelassen
+    if (lastButtonState > 0) { // Taste war gedrückt
+      lastButtonState = 0;
+      buttonTime = millis() - lastAction;
+      if (buttonTime > 5000) {
+        return 4;
+ 126:	84 e0       	ldi	r24, 0x04	; 4
+ 128:	fb cf       	rjmp	.-10     	; 0x120 <getButton()+0xb2>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:60
+      } else if (buttonTime > 2000) {
+        return 3;
+ 12a:	83 e0       	ldi	r24, 0x03	; 3
+ 12c:	f9 cf       	rjmp	.-14     	; 0x120 <getButton()+0xb2>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:64
+      } else if (buttonTime > 50) {
+        return 2;
+      } else {
+        return 1;
+ 12e:	81 e0       	ldi	r24, 0x01	; 1
+ 130:	f7 cf       	rjmp	.-18     	; 0x120 <getButton()+0xb2>
+
+00000132 <setDisplay(unsigned char)>:
+_Z10setDisplayh():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:72
+  }
+  return lastButtonState;
+}
+
+void setDisplay(byte id) {
+  if (id < 20) PORTA = (PORTA & 0x80) | display[id];
+ 132:	84 31       	cpi	r24, 0x14	; 20
+ 134:	08 f4       	brcc	.+2      	; 0x138 <setDisplay(unsigned char)+0x6>
+ 136:	91 cf       	rjmp	.-222    	; 0x5a <setDisplay(unsigned char) [clone .part.3]>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:73
+}
+ 138:	08 95       	ret
+
+0000013a <setAddress(unsigned char)>:
+_Z10setAddressh():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:76
+
+void setAddress(byte id) {
+  PORTB = (PORTB & 0b11111000) | (id & 0b00000111);
+ 13a:	98 b3       	in	r25, 0x18	; 24
+ 13c:	98 7f       	andi	r25, 0xF8	; 248
+ 13e:	28 2f       	mov	r18, r24
+ 140:	27 70       	andi	r18, 0x07	; 7
+ 142:	92 2b       	or	r25, r18
+ 144:	98 bb       	out	0x18, r25	; 24
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:77
+  if ((id & 0b00001000) == 0) {
+ 146:	83 fd       	sbrc	r24, 3
+ 148:	02 c0       	rjmp	.+4      	; 0x14e <setAddress(unsigned char)+0x14>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:78
+    PORTA = PORTA & 0b01111111;
+ 14a:	df 98       	cbi	0x1b, 7	; 27
+ 14c:	08 95       	ret
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:80
+  } else {
+    PORTA = (PORTA & 0b01111111) | 0b10000000;
+ 14e:	df 9a       	sbi	0x1b, 7	; 27
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:82
+  }
+}
+ 150:	08 95       	ret
+
+00000152 <setup>:
+setup():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:85
+
+void setup() {
+  DDRA = 0xFF;
+ 152:	8f ef       	ldi	r24, 0xFF	; 255
+ 154:	8a bb       	out	0x1a, r24	; 26
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:86
+  DDRB = 0x07; 	// 0b00000111;
+ 156:	87 e0       	ldi	r24, 0x07	; 7
+ 158:	87 bb       	out	0x17, r24	; 23
+_ZNK5EERefdeEv():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:53
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 15a:	90 e0       	ldi	r25, 0x00	; 0
+ 15c:	80 e0       	ldi	r24, 0x00	; 0
+ 15e:	f6 d0       	rcall	.+492    	; 0x34c <eeprom_read_byte>
+setup():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:88
+  idx = EEPROM.read(ADDR);
+  idx &= 0x0F;
+ 160:	8f 70       	andi	r24, 0x0F	; 15
+ 162:	80 93 7d 00 	sts	0x007D, r24	; 0x80007d <idx>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:89
+}
+ 166:	08 95       	ret
+
+00000168 <loop>:
+loop():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:90
+void loop() {
+ 168:	cf 93       	push	r28
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:91
+  setDisplay(idx & 0x0F);
+ 16a:	80 91 7d 00 	lds	r24, 0x007D	; 0x80007d <idx>
+ 16e:	8f 70       	andi	r24, 0x0F	; 15
+ 170:	e0 df       	rcall	.-64     	; 0x132 <setDisplay(unsigned char)>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:92
+  setAddress(idx);
+ 172:	80 91 7d 00 	lds	r24, 0x007D	; 0x80007d <idx>
+ 176:	e1 df       	rcall	.-62     	; 0x13a <setAddress(unsigned char)>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:93
+  tmp = getButton();
+ 178:	7a df       	rcall	.-268    	; 0x6e <getButton()>
+ 17a:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <tmp>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:94
+  if (tmp == 2) {
+ 17e:	82 30       	cpi	r24, 0x02	; 2
+ 180:	61 f4       	brne	.+24     	; 0x19a <loop+0x32>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:95
+    idx++;
+ 182:	80 91 7d 00 	lds	r24, 0x007D	; 0x80007d <idx>
+ 186:	8f 5f       	subi	r24, 0xFF	; 255
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:96
+    idx &= 0x0F;
+ 188:	8f 70       	andi	r24, 0x0F	; 15
+ 18a:	80 93 7d 00 	sts	0x007D, r24	; 0x80007d <idx>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:106
+    setDisplay(18);
+    delay(500);
+    setDisplay(19);
+    delay(500);
+  }
+  delay(10);
+ 18e:	6a e0       	ldi	r22, 0x0A	; 10
+ 190:	70 e0       	ldi	r23, 0x00	; 0
+ 192:	80 e0       	ldi	r24, 0x00	; 0
+ 194:	90 e0       	ldi	r25, 0x00	; 0
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:107
+}
+ 196:	cf 91       	pop	r28
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:106
+    setDisplay(18);
+    delay(500);
+    setDisplay(19);
+    delay(500);
+  }
+  delay(10);
+ 198:	9e c0       	rjmp	.+316    	; 0x2d6 <delay>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:97
+  setAddress(idx);
+  tmp = getButton();
+  if (tmp == 2) {
+    idx++;
+    idx &= 0x0F;
+  } else if (tmp == 3) {
+ 19a:	83 30       	cpi	r24, 0x03	; 3
+ 19c:	19 f4       	brne	.+6      	; 0x1a4 <loop+0x3c>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:98
+    idx = 0;
+ 19e:	10 92 7d 00 	sts	0x007D, r1	; 0x80007d <idx>
+ 1a2:	f5 cf       	rjmp	.-22     	; 0x18e <loop+0x26>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:99
+  } else if (tmp == 4) {
+ 1a4:	84 30       	cpi	r24, 0x04	; 4
+ 1a6:	99 f7       	brne	.-26     	; 0x18e <loop+0x26>
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:100
+    EEPROM.update(ADDR, idx);
+ 1a8:	c0 91 7d 00 	lds	r28, 0x007D	; 0x80007d <idx>
+_ZNK5EERefdeEv():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:53
+ 1ac:	90 e0       	ldi	r25, 0x00	; 0
+ 1ae:	80 e0       	ldi	r24, 0x00	; 0
+ 1b0:	cd d0       	rcall	.+410    	; 0x34c <eeprom_read_byte>
+_ZN5EERef6updateEh():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:74
+    EERef &operator &=( uint8_t in )     { return *this = **this & in; }
+    EERef &operator |=( uint8_t in )     { return *this = **this | in; }
+    EERef &operator <<=( uint8_t in )    { return *this = **this << in; }
+    EERef &operator >>=( uint8_t in )    { return *this = **this >> in; }
+
+    EERef &update( uint8_t in )          { return  in != *this ? *this = in : *this; }
+ 1b2:	c8 17       	cp	r28, r24
+ 1b4:	21 f0       	breq	.+8      	; 0x1be <loop+0x56>
+_ZN5EERefaSEh():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:61
+    //Assignment/write members.
+    EERef &operator=( const EERef &ref ) { return *this = *ref; }
+    #if  (defined(__AVR_ATtinyX41__) && F_CPU==16000000 && CLOCK_SOURCE==0)
+      EERef &operator=( uint8_t in )       { return safe_eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+    #else
+      EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+ 1b6:	6c 2f       	mov	r22, r28
+ 1b8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ba:	80 e0       	ldi	r24, 0x00	; 0
+ 1bc:	cf d0       	rcall	.+414    	; 0x35c <eeprom_write_byte>
+_Z10setDisplayh():
+ 1be:	82 e1       	ldi	r24, 0x12	; 18
+ 1c0:	4c df       	rcall	.-360    	; 0x5a <setDisplay(unsigned char) [clone .part.3]>
+loop():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:102
+    setDisplay(18);
+    delay(500);
+ 1c2:	64 ef       	ldi	r22, 0xF4	; 244
+ 1c4:	71 e0       	ldi	r23, 0x01	; 1
+ 1c6:	80 e0       	ldi	r24, 0x00	; 0
+ 1c8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ca:	85 d0       	rcall	.+266    	; 0x2d6 <delay>
+_Z10setDisplayh():
+ 1cc:	83 e1       	ldi	r24, 0x13	; 19
+ 1ce:	45 df       	rcall	.-374    	; 0x5a <setDisplay(unsigned char) [clone .part.3]>
+loop():
+Q:\git\hans61\test\ROM_Switcher/ROM_Switcher.ino:104
+    setDisplay(19);
+    delay(500);
+ 1d0:	64 ef       	ldi	r22, 0xF4	; 244
+ 1d2:	71 e0       	ldi	r23, 0x01	; 1
+ 1d4:	80 e0       	ldi	r24, 0x00	; 0
+ 1d6:	90 e0       	ldi	r25, 0x00	; 0
+ 1d8:	7e d0       	rcall	.+252    	; 0x2d6 <delay>
+ 1da:	d9 cf       	rjmp	.-78     	; 0x18e <loop+0x26>
+
+000001dc <__vector_11>:
+__vector_11():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:983
+
+uint8_t read_factory_calibration(void)
+{
+  uint8_t value = boot_signature_byte_get(1);
+  return value;
+}
+ 1dc:	1f 92       	push	r1
+ 1de:	0f 92       	push	r0
+ 1e0:	0f b6       	in	r0, 0x3f	; 63
+ 1e2:	0f 92       	push	r0
+ 1e4:	11 24       	eor	r1, r1
+ 1e6:	2f 93       	push	r18
+ 1e8:	3f 93       	push	r19
+ 1ea:	8f 93       	push	r24
+ 1ec:	9f 93       	push	r25
+ 1ee:	af 93       	push	r26
+ 1f0:	bf 93       	push	r27
+ 1f2:	80 91 80 00 	lds	r24, 0x0080	; 0x800080 <millis_timer_millis>
+ 1f6:	90 91 81 00 	lds	r25, 0x0081	; 0x800081 <millis_timer_millis+0x1>
+ 1fa:	a0 91 82 00 	lds	r26, 0x0082	; 0x800082 <millis_timer_millis+0x2>
+ 1fe:	b0 91 83 00 	lds	r27, 0x0083	; 0x800083 <millis_timer_millis+0x3>
+ 202:	30 91 7f 00 	lds	r19, 0x007F	; 0x80007f <millis_timer_fract>
+ 206:	26 e0       	ldi	r18, 0x06	; 6
+ 208:	23 0f       	add	r18, r19
+ 20a:	2d 37       	cpi	r18, 0x7D	; 125
+ 20c:	68 f1       	brcs	.+90     	; 0x268 <__vector_11+0x8c>
+ 20e:	29 e8       	ldi	r18, 0x89	; 137
+ 210:	23 0f       	add	r18, r19
+ 212:	03 96       	adiw	r24, 0x03	; 3
+ 214:	a1 1d       	adc	r26, r1
+ 216:	b1 1d       	adc	r27, r1
+ 218:	20 93 7f 00 	sts	0x007F, r18	; 0x80007f <millis_timer_fract>
+ 21c:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <millis_timer_millis>
+ 220:	90 93 81 00 	sts	0x0081, r25	; 0x800081 <millis_timer_millis+0x1>
+ 224:	a0 93 82 00 	sts	0x0082, r26	; 0x800082 <millis_timer_millis+0x2>
+ 228:	b0 93 83 00 	sts	0x0083, r27	; 0x800083 <millis_timer_millis+0x3>
+ 22c:	80 91 84 00 	lds	r24, 0x0084	; 0x800084 <millis_timer_overflow_count>
+ 230:	90 91 85 00 	lds	r25, 0x0085	; 0x800085 <millis_timer_overflow_count+0x1>
+ 234:	a0 91 86 00 	lds	r26, 0x0086	; 0x800086 <millis_timer_overflow_count+0x2>
+ 238:	b0 91 87 00 	lds	r27, 0x0087	; 0x800087 <millis_timer_overflow_count+0x3>
+ 23c:	01 96       	adiw	r24, 0x01	; 1
+ 23e:	a1 1d       	adc	r26, r1
+ 240:	b1 1d       	adc	r27, r1
+ 242:	80 93 84 00 	sts	0x0084, r24	; 0x800084 <millis_timer_overflow_count>
+ 246:	90 93 85 00 	sts	0x0085, r25	; 0x800085 <millis_timer_overflow_count+0x1>
+ 24a:	a0 93 86 00 	sts	0x0086, r26	; 0x800086 <millis_timer_overflow_count+0x2>
+ 24e:	b0 93 87 00 	sts	0x0087, r27	; 0x800087 <millis_timer_overflow_count+0x3>
+ 252:	bf 91       	pop	r27
+ 254:	af 91       	pop	r26
+ 256:	9f 91       	pop	r25
+ 258:	8f 91       	pop	r24
+ 25a:	3f 91       	pop	r19
+ 25c:	2f 91       	pop	r18
+ 25e:	0f 90       	pop	r0
+ 260:	0f be       	out	0x3f, r0	; 63
+ 262:	0f 90       	pop	r0
+ 264:	1f 90       	pop	r1
+ 266:	18 95       	reti
+ 268:	02 96       	adiw	r24, 0x02	; 2
+ 26a:	a1 1d       	adc	r26, r1
+ 26c:	b1 1d       	adc	r27, r1
+ 26e:	d4 cf       	rjmp	.-88     	; 0x218 <__vector_11+0x3c>
+
+00000270 <millis>:
+millis():
+ 270:	2f b7       	in	r18, 0x3f	; 63
+ 272:	f8 94       	cli
+ 274:	60 91 80 00 	lds	r22, 0x0080	; 0x800080 <millis_timer_millis>
+ 278:	70 91 81 00 	lds	r23, 0x0081	; 0x800081 <millis_timer_millis+0x1>
+ 27c:	80 91 82 00 	lds	r24, 0x0082	; 0x800082 <millis_timer_millis+0x2>
+ 280:	90 91 83 00 	lds	r25, 0x0083	; 0x800083 <millis_timer_millis+0x3>
+ 284:	2f bf       	out	0x3f, r18	; 63
+ 286:	08 95       	ret
+
+00000288 <micros>:
+micros():
+ 288:	3f b7       	in	r19, 0x3f	; 63
+ 28a:	f8 94       	cli
+ 28c:	80 91 84 00 	lds	r24, 0x0084	; 0x800084 <millis_timer_overflow_count>
+ 290:	90 91 85 00 	lds	r25, 0x0085	; 0x800085 <millis_timer_overflow_count+0x1>
+ 294:	a0 91 86 00 	lds	r26, 0x0086	; 0x800086 <millis_timer_overflow_count+0x2>
+ 298:	b0 91 87 00 	lds	r27, 0x0087	; 0x800087 <millis_timer_overflow_count+0x3>
+ 29c:	22 b7       	in	r18, 0x32	; 50
+ 29e:	08 b6       	in	r0, 0x38	; 56
+ 2a0:	00 fe       	sbrs	r0, 0
+ 2a2:	05 c0       	rjmp	.+10     	; 0x2ae <micros+0x26>
+ 2a4:	2f 3f       	cpi	r18, 0xFF	; 255
+ 2a6:	19 f0       	breq	.+6      	; 0x2ae <micros+0x26>
+ 2a8:	01 96       	adiw	r24, 0x01	; 1
+ 2aa:	a1 1d       	adc	r26, r1
+ 2ac:	b1 1d       	adc	r27, r1
+ 2ae:	3f bf       	out	0x3f, r19	; 63
+ 2b0:	ba 2f       	mov	r27, r26
+ 2b2:	a9 2f       	mov	r26, r25
+ 2b4:	98 2f       	mov	r25, r24
+ 2b6:	88 27       	eor	r24, r24
+ 2b8:	bc 01       	movw	r22, r24
+ 2ba:	cd 01       	movw	r24, r26
+ 2bc:	62 0f       	add	r22, r18
+ 2be:	71 1d       	adc	r23, r1
+ 2c0:	81 1d       	adc	r24, r1
+ 2c2:	91 1d       	adc	r25, r1
+ 2c4:	43 e0       	ldi	r20, 0x03	; 3
+ 2c6:	66 0f       	add	r22, r22
+ 2c8:	77 1f       	adc	r23, r23
+ 2ca:	88 1f       	adc	r24, r24
+ 2cc:	99 1f       	adc	r25, r25
+ 2ce:	4a 95       	dec	r20
+ 2d0:	d1 f7       	brne	.-12     	; 0x2c6 <micros+0x3e>
+ 2d2:	08 95       	ret
+
+000002d4 <yield>:
+__empty():
+ 2d4:	08 95       	ret
+
+000002d6 <delay>:
+delay():
+ 2d6:	cf 92       	push	r12
+ 2d8:	df 92       	push	r13
+ 2da:	ef 92       	push	r14
+ 2dc:	ff 92       	push	r15
+ 2de:	cf 93       	push	r28
+ 2e0:	df 93       	push	r29
+ 2e2:	6b 01       	movw	r12, r22
+ 2e4:	7c 01       	movw	r14, r24
+ 2e6:	d0 df       	rcall	.-96     	; 0x288 <micros>
+ 2e8:	eb 01       	movw	r28, r22
+ 2ea:	c1 14       	cp	r12, r1
+ 2ec:	d1 04       	cpc	r13, r1
+ 2ee:	e1 04       	cpc	r14, r1
+ 2f0:	f1 04       	cpc	r15, r1
+ 2f2:	61 f0       	breq	.+24     	; 0x30c <delay+0x36>
+ 2f4:	ef df       	rcall	.-34     	; 0x2d4 <yield>
+ 2f6:	c8 df       	rcall	.-112    	; 0x288 <micros>
+ 2f8:	6c 1b       	sub	r22, r28
+ 2fa:	7d 0b       	sbc	r23, r29
+ 2fc:	68 3e       	cpi	r22, 0xE8	; 232
+ 2fe:	73 40       	sbci	r23, 0x03	; 3
+ 300:	a0 f3       	brcs	.-24     	; 0x2ea <delay+0x14>
+ 302:	c1 14       	cp	r12, r1
+ 304:	d1 04       	cpc	r13, r1
+ 306:	e1 04       	cpc	r14, r1
+ 308:	f1 04       	cpc	r15, r1
+ 30a:	39 f4       	brne	.+14     	; 0x31a <delay+0x44>
+ 30c:	df 91       	pop	r29
+ 30e:	cf 91       	pop	r28
+ 310:	ff 90       	pop	r15
+ 312:	ef 90       	pop	r14
+ 314:	df 90       	pop	r13
+ 316:	cf 90       	pop	r12
+ 318:	08 95       	ret
+ 31a:	81 e0       	ldi	r24, 0x01	; 1
+ 31c:	c8 1a       	sub	r12, r24
+ 31e:	d1 08       	sbc	r13, r1
+ 320:	e1 08       	sbc	r14, r1
+ 322:	f1 08       	sbc	r15, r1
+ 324:	c8 51       	subi	r28, 0x18	; 24
+ 326:	dc 4f       	sbci	r29, 0xFC	; 252
+ 328:	e6 cf       	rjmp	.-52     	; 0x2f6 <delay+0x20>
+
+0000032a <init>:
+init():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1138
+*/
+
+  // Use the Millis Timer for fast PWM (unless it doesn't have an output).
+  #if (TIMER_TO_USE_FOR_MILLIS == 0)
+    #if defined(WGM01) // if Timer0 has PWM
+      TCCR0A = (1<<WGM01) | (1<<WGM00);
+ 32a:	83 e0       	ldi	r24, 0x03	; 3
+ 32c:	80 bf       	out	0x30, r24	; 48
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1141
+    #endif
+    #if defined(TCCR0B) //The x61 has a wacky Timer0!
+      TCCR0B = (MillisTimer_Prescale_Index << CS00);
+ 32e:	83 bf       	out	0x33, r24	; 51
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1162
+    TCCR1A = 1<<WGM10;
+    TCCR1B = (1<<WGM12) | (MillisTimer_Prescale_Index << CS10);
+  #endif
+
+  // this needs to be called before setup() or some functions won't work there
+  sei();
+ 330:	78 94       	sei
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1169
+  #ifndef DISABLEMILLIS
+    // Enable the overflow interrupt (this is the basic system tic-toc for millis)
+    #if defined(TIMSK) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+      sbi(TIMSK, TOIE0);
+    #elif defined(TIMSK0) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+      sbi(TIMSK0, TOIE0);
+ 332:	99 b7       	in	r25, 0x39	; 57
+ 334:	91 60       	ori	r25, 0x01	; 1
+ 336:	99 bf       	out	0x39, r25	; 57
+initToneTimerInternal():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:972
+    #elif (TIMER_TO_USE_FOR_TONE == 1 ) && defined(__AVR_ATtinyX7__)
+      TCCR1A = (1<<COM1A1)|(1<<COM1B1)|(1<<WGM10);
+      TCCR1B = (ToneTimer_Prescale_Index << CS10);
+    #elif (TIMER_TO_USE_FOR_TONE == 1) // x4, x8, x313,
+      // Use the Tone Timer for phase correct PWM
+      TCCR1A = (1<<WGM10);
+ 338:	91 e0       	ldi	r25, 0x01	; 1
+ 33a:	9f bd       	out	0x2f, r25	; 47
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:973
+      TCCR1B = (0<<WGM12) | (0<<WGM13) | (ToneTimer_Prescale_Index << CS10); //set the clock
+ 33c:	8e bd       	out	0x2e, r24	; 46
+init():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1214
+  #if defined( INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER ) && INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER
+    #if defined(ADCSRA)
+      // set a2d prescale factor
+      // ADCSRA = (ADCSRA & ~((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0))) | (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
+      // dude, this is being called on startup. We know that ADCSRA is 0! Why add a RMW cycle?!
+      ADCSRA = (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
+ 33e:	86 e8       	ldi	r24, 0x86	; 134
+ 340:	86 b9       	out	0x06, r24	; 6
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1219
+      // enable a2d conversions
+      // sbi(ADCSRA, ADEN); //we already set this!!!
+    #endif
+  #endif
+}
+ 342:	08 95       	ret
+
+00000344 <main>:
+main():
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/main.cpp:5
+#include <Arduino.h>
+
+int main(void)
+{
+  init();
+ 344:	f2 df       	rcall	.-28     	; 0x32a <init>
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/main.cpp:7
+
+  setup();
+ 346:	05 df       	rcall	.-502    	; 0x152 <setup>
+C:\Users\hjjac\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/main.cpp:10 (discriminator 1)
+
+  for (;;)
+    loop();
+ 348:	0f df       	rcall	.-482    	; 0x168 <loop>
+ 34a:	fe cf       	rjmp	.-4      	; 0x348 <main+0x4>
+
+0000034c <eeprom_read_byte>:
+eeprom_read_byte():
+ 34c:	e1 99       	sbic	0x1c, 1	; 28
+ 34e:	fe cf       	rjmp	.-4      	; 0x34c <eeprom_read_byte>
+ 350:	1f ba       	out	0x1f, r1	; 31
+ 352:	8e bb       	out	0x1e, r24	; 30
+ 354:	e0 9a       	sbi	0x1c, 0	; 28
+ 356:	99 27       	eor	r25, r25
+ 358:	8d b3       	in	r24, 0x1d	; 29
+ 35a:	08 95       	ret
+
+0000035c <eeprom_write_byte>:
+eeprom_write_byte():
+ 35c:	26 2f       	mov	r18, r22
+
+0000035e <eeprom_write_r18>:
+ 35e:	e1 99       	sbic	0x1c, 1	; 28
+ 360:	fe cf       	rjmp	.-4      	; 0x35e <eeprom_write_r18>
+ 362:	1c ba       	out	0x1c, r1	; 28
+ 364:	1f ba       	out	0x1f, r1	; 31
+ 366:	8e bb       	out	0x1e, r24	; 30
+ 368:	2d bb       	out	0x1d, r18	; 29
+ 36a:	0f b6       	in	r0, 0x3f	; 63
+ 36c:	f8 94       	cli
+ 36e:	e2 9a       	sbi	0x1c, 2	; 28
+ 370:	e1 9a       	sbi	0x1c, 1	; 28
+ 372:	0f be       	out	0x3f, r0	; 63
+ 374:	01 96       	adiw	r24, 0x01	; 1
+ 376:	08 95       	ret
+
+00000378 <_exit>:
+exit():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ 378:	f8 94       	cli
+
+0000037a <__stop_program>:
+__stop_program():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ 37a:	ff cf       	rjmp	.-2      	; 0x37a <__stop_program>
