@@ -5,6 +5,8 @@
 
 #include <EEPROM.h>
 
+//#define debug
+
 #define button 11;
 #define A16 0;	// B0
 #define A17 1;	// B1
@@ -12,6 +14,22 @@
 #define A19 3;	// A7
 
 #define ADDR 0
+
+#define IF_KEY_PRESSED (PINB & (1 << 3)) == 0
+#define ELAPSED_TIME (millis() - lastAction)
+#define NOW millis()
+
+#define TIME_DEBOUNCE 50
+#define TIME_LONG_PRESSED 1000
+#define TIME_LONG_RELEASED 2000
+#define TIME_VERY_LONG_PRESSED 3000
+
+#define STATE_LONG_RELEASED 1
+#define STATE_NO_KEY_PRESSED 2
+#define STATE_PRESSED 3
+#define STATE_LONG_PRESSED 4
+#define STATE_VERY_LONG_PRESSED 5
+#define STATE_NOW_PRESSED 6
 
 // Character for seven segment display
 byte display[] = {
@@ -37,57 +55,50 @@ byte display[] = {
   0b00000000  // blank
 };
 
+#define BLANK 19
+
 byte tmp;
-byte romIdx;               // ROM Index (selected ROM)
+byte romIdx;                                  // ROM Index (selected ROM)
 byte romLastIdx = 17;
-byte eepromAddr;           // ROM Index (selected ROM)
-long buttonTime;           // Keystroke duration
-long lastAction;           // Start button pressed
-byte lastButtonState = 0;  // Status of the last keystroke
+byte eepromAddr;                              // ROM Index (selected ROM)
+long buttonPressedTime = 0;                   // Keystroke duration
+long lastAction = NOW;                        // Start button pressed
+byte lastButtonState = STATE_NO_KEY_PRESSED;  // Status of the last keystroke
 byte saveEeprom = 1;
 
 // Key query
-// return value
-// 2 = Key pressed shorter 50 ms
-// 3 = Key was pressed
-// 4 = Key was pressed for a long time (>1 seconds)
-// 5 = Key was pressed for a very long time (>3 seconds)
-// 6 = Key released for a long time (>2 seconds)
 byte getButton() {
-  if ((millis() - lastAction) > 50 ) {
-    if ((PINB & (1 << 3)) == 0) { // Key pressed
-      if (lastButtonState == 0) { // not pressed before
-        lastButtonState = 1;
-        lastAction = millis();
-      } else { // Key is still pressed
-        if ((millis() - lastAction) > 5000) lastButtonState = 5;
+  if (ELAPSED_TIME > TIME_DEBOUNCE ) {
+
+    if (IF_KEY_PRESSED) {                                                                           // Key pressed
+      //if ((lastButtonState == STATE_NO_KEY_PRESSED) || (lastButtonState == TIME_LONG_RELEASED)) { // not pressed before
+      if (lastButtonState < STATE_PRESSED) {                                                        // not pressed before
+        lastButtonState = STATE_NOW_PRESSED;
+        lastAction = NOW;
+      } else {                                                                                      // Key is still pressed
+        if (ELAPSED_TIME > TIME_VERY_LONG_PRESSED) lastButtonState = STATE_VERY_LONG_PRESSED;
       }
-    } else {                     // Key released
-      if (lastButtonState > 0) { // Key was pressed [Taste war gedrückt, wurde eben losgelassen]
-        lastButtonState = 0;
-        buttonTime = millis() - lastAction;
-        lastAction = millis();
-        if (buttonTime > 3000) {
-          return 5;
-        } else if (buttonTime > 1000) {
-          return 4;
-        } else if (buttonTime > 50) {
-          return 3;
+    } else {                                                                                        // Key not pressed
+      //if ((lastButtonState != STATE_NO_KEY_PRESSED) && (lastButtonState != TIME_LONG_RELEASED)) { // Key was pressed [Taste war gedrückt, wurde eben losgelassen]
+      if (lastButtonState >= STATE_PRESSED) {                                                       // Key was pressed
+        lastButtonState = STATE_NO_KEY_PRESSED;
+        buttonPressedTime = ELAPSED_TIME;
+        lastAction = NOW;
+        if (buttonPressedTime > TIME_VERY_LONG_PRESSED) {
+          return STATE_VERY_LONG_PRESSED;
+        } else if (buttonPressedTime > TIME_LONG_PRESSED) {
+          return STATE_LONG_PRESSED;
         } else {
-          //lastButtonState = 1;
-          return 2;
+          return STATE_PRESSED;
         }
-      } else {                 // Key is not pressed and was not pressed
-        if ((millis() - lastAction) > 2000) lastButtonState = 6;
-        //        buttonTime = millis() - lastAction;
-        //        if (buttonTime > 3000) {
-        //          return 1;
-        //        }
+      } else {                                                                                       // Key is not pressed and was not pressed
+        if (ELAPSED_TIME > TIME_LONG_RELEASED) lastButtonState = STATE_LONG_RELEASED;
       }
     }
     return lastButtonState;
-  } else {                  // Debounce time
-    return 0;
+
+  } else {                                                                                           // in debounce time
+    return STATE_NO_KEY_PRESSED;
   }
 }
 
@@ -106,29 +117,68 @@ void setAddress(byte id) {
   }
 }
 
+
 void writeEEPROM() {
-  if (eepromAddr < 2 || eepromAddr > 128) { // Address must be even and between 2..128
+  if (eepromAddr < 2 || eepromAddr > 126) { // Address must be even and between 2..126
     eepromAddr = 2;
     EEPROM.update(ADDR, eepromAddr);
   }
   tmp = EEPROM.read(eepromAddr + 1);        // Increase write counter for cell
   tmp--;
-  EEPROM.update(eepromAddr + 1, tmp);
+  EEPROM.write(eepromAddr + 1, tmp);
   if (tmp == 0) {                           // switch to the next cell on overflow
     eepromAddr += 2;
-    if (eepromAddr > 128) eepromAddr = 2;
+    if (eepromAddr > 126) eepromAddr = 2;
     EEPROM.update(ADDR, eepromAddr);        // Set pointer to current cell
   }
+  //eepromAddr = 0;
+  romIdx &= 0x0F;
+  setDisplay(BLANK);
+  delay(250);
+#ifdef debug
+  setDisplay(eepromAddr);
+  delay(250);
+#endif
   EEPROM.update(eepromAddr, romIdx);        // Save ROM index
+  setDisplay(BLANK);
+  delay(100);
+  setDisplay(eepromAddr);
+  delay(250);
+  setDisplay(BLANK);
+  delay(150);
 }
 
 void setup() {
   DDRA = 0xFF;
   DDRB = 0x07; 	                            // 0b00000111;
-  eepromAddr = EEPROM.read(ADDR) & 0b01111110;
-  romIdx = EEPROM.read(eepromAddr);         // read default index from eeprom
-  romIdx &= 0x0F;
-  setAddress(romIdx);
+  eepromAddr = EEPROM.read(ADDR);
+  if (eepromAddr > 0b01111110) {
+    setAddress(0);
+    eepromAddr = 2;
+    EEPROM.write(ADDR, 2);
+
+  } else {
+    eepromAddr &= 0b01111110;
+    romIdx = EEPROM.read(eepromAddr);       // read default index from eeprom
+    romIdx &= 0x0F;
+    setAddress(romIdx);
+#ifdef debug
+    setDisplay(BLANK);
+    delay(250);
+#endif
+    setDisplay(eepromAddr >> 4);
+    delay(250);
+    setDisplay(eepromAddr & 0x0F);
+    delay(250);
+#ifdef debug
+    setDisplay(BLANK);
+    delay(250);
+    setDisplay(romIdx);
+    delay(250);
+    setDisplay(BLANK);
+    delay(250);
+#endif
+  }
 }
 
 void loop() {
@@ -139,25 +189,22 @@ void loop() {
   }
 
   tmp = getButton();
-  if (tmp == 6) {
+  //setDisplay(tmp);
+  if (tmp == STATE_LONG_RELEASED) {
     if (saveEeprom == 0) {
       saveEeprom = 1;
       writeEEPROM();
-      setDisplay(18);            // signal put the bank on display
-      delay(500);
-      setDisplay(19);
-      delay(500);
       setDisplay(romIdx & 0x0F);
     }
-  } else if (tmp == 3) {        // key pressed, switch to the next bank
+  } else if (tmp == STATE_PRESSED) {             // key pressed, switch to the next bank
     romIdx++;
     romIdx &= 0x0F;
     saveEeprom = 0;
-    //writeEEPROM();
-  } else if (tmp == 4) {        // key pressed for a long time, set current bank as default
-    //romIdx = 0;
-  } else if (tmp == 5) {        // key pressed very long, reset bank to 0
-    //romIdx = 0;
+  } else if (tmp == STATE_LONG_PRESSED) {        // key pressed for a long time, set bank to 0 (my ROM vX0)
+    romIdx = 0;
+    saveEeprom = 0;
+  } else if (tmp == STATE_VERY_LONG_PRESSED) {   // key pressed very long, set bank to 8 (my ROM 128k7)
+    romIdx = 8;
+    saveEeprom = 0;
   }
-  //delay(10);
 }
